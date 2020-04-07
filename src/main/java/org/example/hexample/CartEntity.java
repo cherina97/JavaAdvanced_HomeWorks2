@@ -1,4 +1,4 @@
-package org.example;
+package org.example.hexample;
 
 import javax.persistence.*;
 import java.util.Objects;

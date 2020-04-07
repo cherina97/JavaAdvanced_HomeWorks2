@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="org.example.Item" table="item">
+    <class name="org.example.hexample.Item" table="item">
         <id name="id" type="int" column="id">
             <generator class="increment"/>
         </id>
@@ -14,7 +14,7 @@
             <key>
                 <column name="item_id" not-null="true"></column>
             </key>
-            <many-to-many entity-name="org.example.Cart">
+            <many-to-many entity-name="org.example.hexample.Cart">
                 <column name="cart_id" not-null="true"></column>
             </many-to-many>
         </set>
