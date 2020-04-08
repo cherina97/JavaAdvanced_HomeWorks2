@@ -11,7 +11,17 @@
         <property name="hibernate.connection.password">Chervinskaya1997</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping resource="Cart.hbm.xml" />
-        <mapping resource="Item.hbm.xml" />
+<!--        <mapping resource="Cart.hbm.xml" />-->
+<!--        <mapping resource="Item.hbm.xml" />-->
+        <mapping class="org.example.onetomany.Comment" />
+        <mapping class="org.example.onetomany.Post" />
+<!--        <mapping class="org.example.manytoone.Person" />-->
+<!--        <mapping class="org.example.manytoone.Phone" />-->
+<!--        <mapping class="org.example.manytomany.bi.User" />-->
+<!--        <mapping class="org.example.manytomany.bi.Project" />-->
+<!--        <mapping class="org.example.manytomany.uni.User" />-->
+<!--        <mapping class="org.example.manytomany.uni.Project" />-->
+<!--        <mapping class="org.example.onetoone.Participant" />-->
+<!--        <mapping class="org.example.onetoone.InfoReport" />-->
     </session-factory>
 </hibernate-configuration>

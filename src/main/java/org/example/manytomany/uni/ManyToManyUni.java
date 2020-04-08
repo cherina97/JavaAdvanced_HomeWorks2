@@ -1,4 +1,4 @@
-package org.example.hexample;
+package org.example.manytomany.uni;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,31 +6,29 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
 
-public class HibernateApp {
+public class ManyToManyUni {
     public static void main(String[] args) {
         Configuration configuration = new Configuration().configure();
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        Cart cart = new Cart(10, "Cart1");
-        Item item1 = new Item(1);
-        Item item2 = new Item(2);
-        Item item3 = new Item(3);
-        Item item4 = new Item(4);
-        Set <Item> items = new HashSet<>();
-        items.add(item1);
-        items.add(item2);
-        items.add(item3);
-        items.add(item4);
+        User user1 = new User("User1", 20);
+        User user2 = new User("User2", 30);
 
-        cart.setItems(items);
+        Project project1 = new Project("Project1");
+        Project project2 = new Project("Project2");
 
-        session.persist(cart);
-//        session.close();
+        project1.setUsers(new HashSet<>(Arrays.asList(user1, user2)));
+        project2.setUsers(new HashSet<>(Collections.singletonList(user2)));
+
+        session.persist(project1);
+        session.persist(project2);
+
         transaction.commit();
+//        session.close();
     }
 }
